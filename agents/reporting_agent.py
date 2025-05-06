@@ -2,6 +2,9 @@ from typing import Any, Dict
 from .base_agent import BaseAgent
 
 class ReportingAgent(BaseAgent):
+    def __init__(self):
+        super().__init__(model_name="llama3.1:8b")  # Will be replaced with your fine-tuned model
+    
     def _get_system_prompt(self) -> str:
         return """You are a security reporting agent specialized in healthcare device security.
         Your role is to create comprehensive security reports that summarize findings,
