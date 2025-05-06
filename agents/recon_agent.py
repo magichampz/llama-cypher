@@ -3,6 +3,9 @@ from typing import Any, Dict, List
 from .base_agent import BaseAgent
 
 class ReconAgent(BaseAgent):
+    def __init__(self):
+        super().__init__(model_name="llama3.1:8b")  # Will be replaced with your fine-tuned model
+    
     def _get_system_prompt(self) -> str:
         return """You are a network reconnaissance agent specialized in healthcare device discovery.
         Your role is to identify medical devices on the network and assess their potential security risks.

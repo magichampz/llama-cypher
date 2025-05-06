@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict
-# from langchain.chat_models import ChatOllama
 from langchain_ollama import ChatOllama
 from langchain.schema import HumanMessage, SystemMessage
 
