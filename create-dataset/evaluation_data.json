@@ -1,0 +1,827 @@
+[
+  {
+    "category": "Vulnerabilities and Exploits",
+    "question": "A medical device manufacturer discovers a vulnerability in their insulin pump that allows unauthorized access to modify dosage settings remotely. Which type of vulnerability does this scenario most likely represent?",
+    "options": {
+      "A": "Denial of Service (DoS)",
+      "B": "Improper Authentication",
+      "C": "Buffer Overflow",
+      "D": "SQL Injection"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Vulnerabilities and Exploits",
+    "question": "A hospital's pacemaker devices are found to be vulnerable due to weak encryption protocols that can be easily bypassed by attackers. What should be the primary focus to mitigate this vulnerability?",
+    "options": {
+      "A": "Implementing stronger encryption standards",
+      "B": "Increasing physical security for devices",
+      "C": "Updating the firmware regularly",
+      "D": "Training staff on device usage"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Vulnerabilities and Exploits",
+    "question": "An attacker exploits a flaw in a medical imaging device to execute arbitrary code. This flaw allows the attacker to gain control over the device's operations. What class of vulnerability does this exploit most likely involve?",
+    "options": {
+      "A": "Cross-Site Scripting (XSS)",
+      "B": "Code Injection",
+      "C": "Path Traversal",
+      "D": "Insecure Direct Object Reference"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Vulnerabilities and Exploits",
+    "question": "During a security assessment, testers identify a vulnerability in a network-connected infusion pump that could allow attackers to intercept and alter data between the device and its management server. What type of vulnerability is this an example of?",
+    "options": {
+      "A": "Man-in-the-Middle (MitM)",
+      "B": "Cross-Site Request Forgery (CSRF)",
+      "C": "Memory Corruption",
+      "D": "Race Condition"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Vulnerabilities and Exploits",
+    "question": "A vulnerability in a medical device firmware allows attackers to crash the device by sending malformed packets to it repeatedly. What best describes this type of vulnerability?",
+    "options": {
+      "A": "Denial of Service (DoS)",
+      "B": "Privilege Escalation",
+      "C": "Remote Code Execution",
+      "D": "Information Disclosure"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Bluetooth and Wireless Security",
+    "question": "Which of the following scenarios represents a potential risk of a Bluebugging attack?",
+    "options": {
+      "A": "An attacker sends unsolicited messages to nearby Bluetooth devices.",
+      "B": "An attacker gains unauthorized access to a Bluetooth-enabled device and controls its functions.",
+      "C": "A user connects their Bluetooth headphones to a public network.",
+      "D": "A Bluetooth device is set to 'discoverable' mode in a crowded area."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Bluetooth and Wireless Security",
+    "question": "What is the primary purpose of implementing a Wireless Intrusion Detection System (WIDS) in a corporate environment?",
+    "options": {
+      "A": "To encrypt wireless communication between devices.",
+      "B": "To detect and prevent unauthorized access to the wireless network.",
+      "C": "To ensure compliance with data protection regulations.",
+      "D": "To optimize the performance of the wireless network."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Bluetooth and Wireless Security",
+    "question": "Which Bluetooth security mode requires user authentication and is most effective against eavesdropping?",
+    "options": {
+      "A": "Security Mode 1: Non-secure",
+      "B": "Security Mode 2: Service Level Enforced Security",
+      "C": "Security Mode 3: Link Level Enforced Security",
+      "D": "Security Mode 4: Secure Connections Only"
+    },
+    "answer": "D"
+  },
+  {
+    "category": "Bluetooth and Wireless Security",
+    "question": "During a penetration test, you discover that a company's Bluetooth devices are vulnerable to a KNOB attack. What does this vulnerability allow?",
+    "options": {
+      "A": "It allows attackers to force devices to connect to a rogue access point.",
+      "B": "It allows attackers to downgrade Bluetooth encryption keys, making them easier to crack.",
+      "C": "It allows attackers to inject malicious firmware onto the device.",
+      "D": "It allows attackers to intercept and modify Bluetooth traffic without detection."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Bluetooth and Wireless Security",
+    "question": "A company is concerned about potential wireless eavesdropping on their network. Which protocol should be implemented to enhance the confidentiality of their Wi-Fi communications?",
+    "options": {
+      "A": "WEP",
+      "B": "WPA2-PSK",
+      "C": "WPA3-SAE",
+      "D": "WPA-TKIP"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Penetration Testing Workflows",
+    "question": "During a penetration test, you are given a network architecture diagram but no details on the internal applications used. Which phase of the penetration testing workflow should you focus on to gather this information?",
+    "options": {
+      "A": "Reconnaissance",
+      "B": "Exploitation",
+      "C": "Post-Exploitation",
+      "D": "Reporting"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Penetration Testing Workflows",
+    "question": "You have successfully exploited a vulnerability and gained access to a system. What is the next logical step in the penetration testing workflow?",
+    "options": {
+      "A": "Conduct a Denial of Service attack",
+      "B": "Establish persistence and escalate privileges",
+      "C": "Immediately report the vulnerability to the client",
+      "D": "Move on to testing other systems without further actions"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Penetration Testing Workflows",
+    "question": "In a scenario where a penetration tester is required to test a web application without any prior knowledge of the application, which type of testing methodology is being employed?",
+    "options": {
+      "A": "White-box testing",
+      "B": "Black-box testing",
+      "C": "Gray-box testing",
+      "D": "Source code review"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Penetration Testing Workflows",
+    "question": "After completing a penetration test, which document should be prepared to summarize the findings, risks, and recommended mitigations for the client?",
+    "options": {
+      "A": "Exploit Documentation",
+      "B": "Mitigation Plan",
+      "C": "Test Report",
+      "D": "Vulnerability Scan Report"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Penetration Testing Workflows",
+    "question": "During a penetration test, you discover that a critical server is vulnerable to a zero-day exploit. Which step should you take regarding this discovery?",
+    "options": {
+      "A": "Exploit the vulnerability to its full extent to demonstrate maximum risk",
+      "B": "Immediately notify the client about the zero-day vulnerability",
+      "C": "Ignore the vulnerability as it is a zero-day and cannot be patched",
+      "D": "Wait until the end of the test to include it in the final report"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Penetration Testing Lifecycle",
+    "question": "During the initial phase of a penetration test, what is the primary objective when conducting reconnaissance?",
+    "options": {
+      "A": "To exploit vulnerabilities in the target system",
+      "B": "To gather as much information as possible about the target",
+      "C": "To gain unauthorized access to sensitive data",
+      "D": "To close any discovered vulnerabilities"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Penetration Testing Lifecycle",
+    "question": "In the context of the penetration testing lifecycle, which of the following best describes the 'exploitation' phase?",
+    "options": {
+      "A": "Identifying potential entry points and vulnerabilities in the target system",
+      "B": "Gaining unauthorized access to the target using identified vulnerabilities",
+      "C": "Documenting all findings and preparing a report",
+      "D": "Performing social engineering attacks on the target"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Penetration Testing Lifecycle",
+    "question": "Which phase of the penetration testing lifecycle involves simulating an attack to test the effectiveness of security measures?",
+    "options": {
+      "A": "Planning and Scoping",
+      "B": "Reconnaissance",
+      "C": "Exploitation",
+      "D": "Post-Exploitation"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Penetration Testing Lifecycle",
+    "question": "After successfully gaining access to a target system, a penetration tester must decide their next steps. Which phase follows exploitation in the penetration testing lifecycle?",
+    "options": {
+      "A": "Reconnaissance",
+      "B": "Post-Exploitation",
+      "C": "Reporting",
+      "D": "Planning and Scoping"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Penetration Testing Lifecycle",
+    "question": "A penetration tester has completed an assessment and is now drafting a report. Which of the following should be included in the report to effectively communicate the findings?",
+    "options": {
+      "A": "Detailed technical jargon without context",
+      "B": "Only a list of exploited vulnerabilities",
+      "C": "An executive summary, detailed findings, and remediation recommendations",
+      "D": "Screenshots of every tested page of the application"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Physical Attack Vectors",
+    "question": "A pen tester is hired to assess the security of a company's premises. Upon arrival, they notice a locked server room with a sign indicating it is under video surveillance. Which physical attack vector could potentially allow the pen tester to access the server room without being detected by cameras?",
+    "options": {
+      "A": "Tailgating an employee into the server room",
+      "B": "Using a lock-picking tool to open the door discreetly",
+      "C": "Deploying a fake maintenance request to gain entry",
+      "D": "Causing a power outage to disable the surveillance system"
+    },
+    "answer": "D"
+  },
+  {
+    "category": "Physical Attack Vectors",
+    "question": "An attacker is attempting to gain access to a secured facility using social engineering techniques. Which of the following methods involves physically entering the facility by following an employee through a secure door?",
+    "options": {
+      "A": "Phishing",
+      "B": "Tailgating",
+      "C": "Shoulder surfing",
+      "D": "Dumpster diving"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Physical Attack Vectors",
+    "question": "In a high-security environment, an attacker uses a USB keylogger to capture keystrokes from a target's workstation. What is a potential countermeasure to prevent this type of physical attack?",
+    "options": {
+      "A": "Implementing two-factor authentication",
+      "B": "Conducting regular security awareness training",
+      "C": "Using digitally signed USB ports",
+      "D": "Physically inspecting USB ports for unauthorized devices"
+    },
+    "answer": "D"
+  },
+  {
+    "category": "Physical Attack Vectors",
+    "question": "During a security audit, it was discovered that an attacker had gained unauthorized access to a building by cloning an employee's RFID badge. Which of the following measures would most effectively mitigate this type of attack in the future?",
+    "options": {
+      "A": "Increasing the frequency of badge audits",
+      "B": "Implementing biometric access controls",
+      "C": "Requiring employees to change badges monthly",
+      "D": "Enhancing CCTV coverage around entry points"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Physical Attack Vectors",
+    "question": "A data center is protected by a physical barrier and security personnel. An attacker plans to breach the facility by exploiting a vulnerability in the barrier system. Which of the following represents a plausible attack vector?",
+    "options": {
+      "A": "Using a drone to drop malware into the facility",
+      "B": "Cutting through the barrier with specialized tools",
+      "C": "Bribing security personnel to gain access",
+      "D": "Exploiting a wireless vulnerability in the barrier's control system"
+    },
+    "answer": "D"
+  },
+  {
+    "category": "Network Exploits",
+    "question": "During a penetration test, you discover that a network uses a deprecated version of SMB that allows for certain vulnerabilities. Which exploit is most commonly associated with this scenario?",
+    "options": {
+      "A": "Heartbleed",
+      "B": "EternalBlue",
+      "C": "Shellshock",
+      "D": "POODLE"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Application Exploits",
+    "question": "A web application is vulnerable to SQL injection. Which of the following techniques can be used to exploit this vulnerability to bypass authentication?",
+    "options": {
+      "A": "Using a UNION SQL clause",
+      "B": "Deploying a buffer overflow attack",
+      "C": "Leveraging a cross-site scripting (XSS) technique",
+      "D": "Implementing a phishing scheme"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Network Exploits",
+    "question": "An attacker is attempting to intercept and modify communications between two parties without being detected. Which of the following attacks is being used?",
+    "options": {
+      "A": "DDoS attack",
+      "B": "Man-in-the-Middle attack",
+      "C": "Pharming attack",
+      "D": "DNS spoofing attack"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Application Exploits",
+    "question": "A developer mistakenly leaves a debug mode enabled on a production server, which allows remote code execution. Which vulnerability does this situation most closely relate to?",
+    "options": {
+      "A": "Cross-Site Request Forgery (CSRF)",
+      "B": "Remote File Inclusion (RFI)",
+      "C": "Sensitive Data Exposure",
+      "D": "Insecure Deserialization"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Network Exploits",
+    "question": "Which of the following network protocols is particularly susceptible to ARP spoofing attacks due to its lack of authentication?",
+    "options": {
+      "A": "HTTP",
+      "B": "DNS",
+      "C": "ARP",
+      "D": "SMTP"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Mitigation and Hardening",
+    "question": "A financial institution is implementing a new policy for hardening its database servers. Which of the following is the most effective method to reduce the risk of SQL injection attacks?",
+    "options": {
+      "A": "Disabling all unused database ports",
+      "B": "Implementing input validation and prepared statements",
+      "C": "Using a web application firewall (WAF)",
+      "D": "Encrypting database connections"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Mitigation and Hardening",
+    "question": "A company has noticed an increase in ransomware attacks targeting its network. Which of the following strategies is most effective at the network level to mitigate such attacks?",
+    "options": {
+      "A": "Regularly updating antivirus software",
+      "B": "Implementing network segmentation",
+      "C": "Using strong password policies",
+      "D": "Conducting regular employee training"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Mitigation and Hardening",
+    "question": "An organization is concerned about potential data breaches. Which application-level security measure is most effective in protecting sensitive data from unauthorized access?",
+    "options": {
+      "A": "Disabling all root access",
+      "B": "Conducting regular penetration testing",
+      "C": "Implementing role-based access control (RBAC)",
+      "D": "Using virtual private networks (VPNs)"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Mitigation and Hardening",
+    "question": "A software development team is tasked with hardening their application before deployment. Which of the following practices should be prioritized to minimize security vulnerabilities?",
+    "options": {
+      "A": "Implementing a bug bounty program",
+      "B": "Conducting static code analysis",
+      "C": "Utilizing open-source libraries",
+      "D": "Enforcing a strict release schedule"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Mitigation and Hardening",
+    "question": "A corporate IT department wants to protect its devices from malware. Which device-level security measure is most effective in preventing unauthorized code execution?",
+    "options": {
+      "A": "Installing a reputable antivirus program",
+      "B": "Applying software patches regularly",
+      "C": "Enabling application whitelisting",
+      "D": "Disabling USB ports"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Incident Response",
+    "question": "During an incident response, the team discovers that a threat actor has gained unauthorized access to sensitive data. What is the most appropriate immediate action to take?",
+    "options": {
+      "A": "Reboot the affected systems to remove the threat.",
+      "B": "Disconnect affected systems from the network to prevent further data exfiltration.",
+      "C": "Notify law enforcement immediately to handle the situation.",
+      "D": "Conduct a full vulnerability scan to identify any other weaknesses."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Incident Response",
+    "question": "Which of the following best describes the purpose of a post-incident review (PIR) in the incident response process?",
+    "options": {
+      "A": "To identify the attacker and possible legal actions.",
+      "B": "To assess the financial impact of the incident on the organization.",
+      "C": "To evaluate the effectiveness of the response and improve the incident response plan.",
+      "D": "To restore systems to their original state prior to the incident."
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Incident Response",
+    "question": "An organization has just contained a ransomware attack. What should be the next step in the incident response process?",
+    "options": {
+      "A": "Immediately begin eradication procedures to remove the ransomware.",
+      "B": "Initiate recovery procedures to restore encrypted data from backups.",
+      "C": "Conduct a forensic analysis to understand the attack vector.",
+      "D": "Notify affected stakeholders about the incident."
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Incident Response",
+    "question": "In the context of incident response, what is the primary benefit of maintaining an updated asset inventory?",
+    "options": {
+      "A": "It helps in prioritizing incident response efforts based on asset criticality.",
+      "B": "It ensures compliance with regulatory requirements.",
+      "C": "It provides a comprehensive list for auditors during an investigation.",
+      "D": "It simplifies the process of patch management."
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Incident Response",
+    "question": "During a security incident, the incident response team decides to implement a containment strategy. Which of the following is a potential downside of this action?",
+    "options": {
+      "A": "Containment may lead to increased downtime for affected systems.",
+      "B": "It can alert the attacker, causing them to escalate their activities.",
+      "C": "Containment might result in the loss of crucial forensic evidence.",
+      "D": "It could lead to non-compliance with data protection laws."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Compliance and Legal",
+    "question": "A healthcare organization is developing a new mobile app to help patients manage their appointments and view test results. Which of the following HIPAA rules primarily governs the protection of patient data in this context?",
+    "options": {
+      "A": "The Security Rule",
+      "B": "The Privacy Rule",
+      "C": "The Breach Notification Rule",
+      "D": "The Enforcement Rule"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Compliance and Legal",
+    "question": "Under the GDPR, a data breach occurs at a European company, compromising the personal data of EU citizens. What is the maximum time limit the company has to notify the relevant supervisory authority?",
+    "options": {
+      "A": "24 hours",
+      "B": "48 hours",
+      "C": "72 hours",
+      "D": "1 week"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Compliance and Legal",
+    "question": "A UK-based pharmaceutical company is conducting a clinical trial and needs to ensure compliance with MHRA regulations. Which of the following is a key focus of MHRA compliance in this context?",
+    "options": {
+      "A": "Ensuring data subjects can delete their data at any time",
+      "B": "Maintaining accurate and robust documentation of trial data and procedures",
+      "C": "Providing financial compensation to all trial participants",
+      "D": "Publishing trial results in publicly accessible databases within 6 months"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Compliance and Legal",
+    "question": "A multinational corporation collects personal data from EU citizens for marketing purposes. According to GDPR, which of the following is a lawful basis for processing this data?",
+    "options": {
+      "A": "The data is collected from publicly available sources",
+      "B": "The data subjects have given explicit consent for processing",
+      "C": "The company has a legitimate interest in increasing its market share",
+      "D": "The data is not sensitive or special category data"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Compliance and Legal",
+    "question": "A hospital experiences a ransomware attack that affects its electronic health record system. According to HIPAA, what is the first step the hospital should take in response to this incident?",
+    "options": {
+      "A": "Notify the affected patients immediately",
+      "B": "Determine whether the attack constitutes a breach of unsecured PHI",
+      "C": "Pay the ransom to regain access to the data",
+      "D": "Report the incident to law enforcement agencies"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Tool Identification and Purpose",
+    "question": "Which tool in Kali Linux is primarily used for wireless network auditing and can help identify vulnerabilities within Wi-Fi networks by capturing and analyzing packets?",
+    "options": {
+      "A": "Aircrack-ng",
+      "B": "Nmap",
+      "C": "Hydra",
+      "D": "Wireshark"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Tool Identification and Purpose",
+    "question": "You need to perform a security assessment on a web application to identify vulnerabilities in its HTTP requests and responses. Which Kali Linux tool is best suited for this task?",
+    "options": {
+      "A": "John the Ripper",
+      "B": "Burp Suite",
+      "C": "Metasploit",
+      "D": "Maltego"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Tool Identification and Purpose",
+    "question": "A penetration tester wants to discover live hosts and open ports on a network quickly. Which tool in Kali Linux should they use for efficient network scanning?",
+    "options": {
+      "A": "Nikto",
+      "B": "Nmap",
+      "C": "OWASP ZAP",
+      "D": "Sqlmap"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Tool Identification and Purpose",
+    "question": "Which tool in Kali Linux is primarily designed for brute-forcing passwords on network services such as FTP, HTTP, and SSH?",
+    "options": {
+      "A": "Hydra",
+      "B": "Ettercap",
+      "C": "Wireshark",
+      "D": "Hping3"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Tool Identification and Purpose",
+    "question": "During an engagement, you need to map relationships and visualize connections in data. Which tool in Kali Linux is intended for open-source intelligence and data visualization?",
+    "options": {
+      "A": "Metasploit",
+      "B": "Maltego",
+      "C": "Aircrack-ng",
+      "D": "Nikto"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Basic Usage and Commands",
+    "question": "While conducting a penetration test, you need to scan a network to identify live hosts and open ports using Nmap. Which Nmap command will perform a SYN scan, identify the version of services running, and output the results in a greppable format?",
+    "options": {
+      "A": "nmap -sS -sV -oG output.txt",
+      "B": "nmap -sT -A -oN output.txt",
+      "C": "nmap -sP -oG output.txt",
+      "D": "nmap -sS -oX output.txt"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Basic Usage and Commands",
+    "question": "You are tasked with brute-forcing FTP passwords during a penetration test. Which Hydra command would you use to perform a dictionary attack on FTP service running on 192.168.1.5 using a username list 'users.txt' and a password list 'passwords.txt'?",
+    "options": {
+      "A": "hydra -l users.txt -P passwords.txt ftp://192.168.1.5",
+      "B": "hydra -L users.txt -p passwords.txt ftp://192.168.1.5",
+      "C": "hydra -L users.txt -P passwords.txt ftp://192.168.1.5",
+      "D": "hydra -U users.txt -P passwords.txt ftp://192.168.1.5"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Basic Usage and Commands",
+    "question": "During a web application test, you want to intercept and modify HTTP requests. Which command using Burp Suite's proxy tool will start the Burp Suite with the interception feature activated?",
+    "options": {
+      "A": "burpsuite --intercept",
+      "B": "java -jar burpsuite.jar",
+      "C": "burpsuite -p",
+      "D": "burpsuite -i"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Basic Usage and Commands",
+    "question": "For a penetration test, you need to use Metasploit to exploit a known vulnerability in a target system. After selecting the exploit, which command will you use to see available payloads that can be used with it?",
+    "options": {
+      "A": "show exploits",
+      "B": "show payloads",
+      "C": "list payloads",
+      "D": "info payloads"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Basic Usage and Commands",
+    "question": "You are performing a network security assessment and need to capture and analyze packets on a specific interface using tcpdump. Which command will capture only TCP packets on the 'eth0' interface and save them to a file named 'capture.pcap'?",
+    "options": {
+      "A": "tcpdump -i eth0 tcp -w capture.pcap",
+      "B": "tcpdump tcp -i eth0 -o capture.pcap",
+      "C": "tcpdump -w capture.pcap -i eth0",
+      "D": "tcpdump -i eth0 -w capture.pcap"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Scenario-Based Tool Selection",
+    "question": "You have gained access to a Windows server and wish to exploit a known vulnerability to escalate privileges. Which Kali Linux tool would be most appropriate to use in this context?",
+    "options": {
+      "A": "Metasploit Framework",
+      "B": "Burp Suite",
+      "C": "Wireshark",
+      "D": "Hydra"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Scenario-Based Tool Selection",
+    "question": "During a penetration test, you need to capture and analyze network traffic to identify potential security issues. Which tool would be most suitable for this task?",
+    "options": {
+      "A": "John the Ripper",
+      "B": "Wireshark",
+      "C": "Nmap",
+      "D": "Aircrack-ng"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Scenario-Based Tool Selection",
+    "question": "You are tasked with performing a reconnaissance operation to discover open ports on a network. Which Kali Linux tool should you use to efficiently map out the network services?",
+    "options": {
+      "A": "Maltego",
+      "B": "Nmap",
+      "C": "Social Engineering Toolkit",
+      "D": "Sqlmap"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Scenario-Based Tool Selection",
+    "question": "In the process of a web application assessment, you need to find and exploit SQL injection vulnerabilities. Which tool would be the best choice for this task?",
+    "options": {
+      "A": "Nikto",
+      "B": "Sqlmap",
+      "C": "Ettercap",
+      "D": "Netcat"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Scenario-Based Tool Selection",
+    "question": "Your goal is to perform a brute-force attack on a remote server's SSH service to test its security. Which tool from Kali Linux should you employ for this purpose?",
+    "options": {
+      "A": "Hydra",
+      "B": "Aircrack-ng",
+      "C": "OWASP ZAP",
+      "D": "Snort"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Command Interpretation",
+    "question": "What does the command `grep -E '^(foo|bar)' file.txt` do?",
+    "options": {
+      "A": "Searches for lines in file.txt that contain the string 'foo' or 'bar' anywhere in the line.",
+      "B": "Searches for lines in file.txt that start with either 'foo' or 'bar'.",
+      "C": "Searches for lines in file.txt that end with either 'foo' or 'bar'.",
+      "D": "Searches for lines in file.txt that do not contain either 'foo' or 'bar'."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Command Interpretation",
+    "question": "In the context of Git, what is the effect of the command `git reset HEAD~2`?",
+    "options": {
+      "A": "It permanently deletes the last two commits and cannot be undone.",
+      "B": "It moves the current branch back by two commits but keeps the changes in the working directory.",
+      "C": "It reverts the changes of the last two commits and creates new revert commits.",
+      "D": "It removes the last two commits and stages all their changes for commit."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Command Interpretation",
+    "question": "What does the command `find /var/log -type f -mtime +30 -delete` accomplish?",
+    "options": {
+      "A": "Lists all files in /var/log that were modified more than 30 minutes ago.",
+      "B": "Deletes all directories in /var/log that were modified more than 30 days ago.",
+      "C": "Deletes all files in /var/log that were modified more than 30 days ago.",
+      "D": "Lists all files in /var/log that were modified more than 30 days ago."
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Command Interpretation",
+    "question": "What is the result of executing the command `tar -czf backup.tar.gz --exclude='*.tmp' /home/user/documents`?",
+    "options": {
+      "A": "Compresses all files in /home/user/documents into backup.tar.gz, excluding files with a .tmp extension.",
+      "B": "Compresses all .tmp files in /home/user/documents into backup.tar.gz.",
+      "C": "Creates a tarball of all files in /home/user/documents, including files with a .tmp extension.",
+      "D": "Deletes all .tmp files in /home/user/documents and creates a tarball of the remaining files."
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Command Interpretation",
+    "question": "What does the command `awk '{sum += $1} END {print sum}' numbers.txt` do?",
+    "options": {
+      "A": "Calculates the sum of all numbers in the first column of numbers.txt and prints the total.",
+      "B": "Prints each number in the first column of numbers.txt followed by their cumulative sum.",
+      "C": "Prints the sum of numbers in all columns of numbers.txt.",
+      "D": "Counts the number of lines in numbers.txt and prints the count."
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Tool Features and Strengths",
+    "question": "Which feature of Git makes it particularly advantageous for tracking changes and collaboration in software development?",
+    "options": {
+      "A": "Centralized repository system",
+      "B": "Distributed version control",
+      "C": "Built-in bug tracking",
+      "D": "Automated code generation"
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Tool Features and Strengths",
+    "question": "In what scenario does the use of Docker provide a significant advantage over traditional virtual machines?",
+    "options": {
+      "A": "When running applications on a single operating system kernel",
+      "B": "When requiring full isolation of hardware resources",
+      "C": "When needing to support multiple operating systems on one host",
+      "D": "When security at the hardware level is a primary concern"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Tool Features and Strengths",
+    "question": "What is a primary strength of using Apache Kafka in data processing pipelines?",
+    "options": {
+      "A": "Low latency message delivery",
+      "B": "Built-in data analysis tools",
+      "C": "Automatic scaling to unlimited nodes",
+      "D": "Native support for relational databases"
+    },
+    "answer": "A"
+  },
+  {
+    "category": "Tool Features and Strengths",
+    "question": "Why might a development team choose to use Kubernetes for managing their containerized applications?",
+    "options": {
+      "A": "It provides direct support for monolithic application architectures",
+      "B": "It eliminates the need for service discovery",
+      "C": "It automates deployment, scaling, and management of containerized applications",
+      "D": "It offers built-in continuous integration and delivery pipelines"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Tool Features and Strengths",
+    "question": "Which key feature of Terraform makes it especially useful for infrastructure as code?",
+    "options": {
+      "A": "It allows for interactive GUI-based infrastructure management",
+      "B": "It supports only cloud-based infrastructure provisioning",
+      "C": "It provides a consistent CLI workflow across different providers",
+      "D": "It includes built-in networking hardware support"
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Tool Limitations and Risks",
+    "question": "In the context of integrating AI-driven diagnostic tools in healthcare, what is a major limitation that clinicians should be aware of?",
+    "options": {
+      "A": "AI tools can easily replace human judgment in all cases.",
+      "B": "AI tools require no data input for accurate diagnosis.",
+      "C": "AI tools may perpetuate existing biases present in the training data.",
+      "D": "AI tools perform better without any human oversight."
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Tool Limitations and Risks",
+    "question": "What is a significant risk when using cloud-based electronic health record (EHR) systems in a small clinic setting?",
+    "options": {
+      "A": "Unlimited data storage capacity.",
+      "B": "Potential for data breaches and unauthorized access.",
+      "C": "Automatic updates that require no user intervention.",
+      "D": "Enhanced interoperability with other systems."
+    },
+    "answer": "B"
+  },
+  {
+    "category": "Tool Limitations and Risks",
+    "question": "Which of the following is a limitation of using machine learning algorithms for patient risk stratification?",
+    "options": {
+      "A": "They can only be used for financial predictions.",
+      "B": "They require extensive manual data processing.",
+      "C": "They may not account for complex individual patient factors.",
+      "D": "They are unable to process large datasets."
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Tool Limitations and Risks",
+    "question": "In a hospital setting, what is a potential risk of relying solely on automated medication dispensing systems?",
+    "options": {
+      "A": "Increased accuracy in medication dosing.",
+      "B": "Reduced need for pharmacy staff.",
+      "C": "Possibility of system errors leading to incorrect medication being dispensed.",
+      "D": "Increased patient satisfaction due to faster service."
+    },
+    "answer": "C"
+  },
+  {
+    "category": "Tool Limitations and Risks",
+    "question": "When deploying telemedicine tools in rural areas, what is a common limitation that healthcare providers might face?",
+    "options": {
+      "A": "Increased physical interaction with patients.",
+      "B": "High-speed internet connectivity may not be consistently available.",
+      "C": "Telemedicine tools are generally more expensive than traditional visits.",
+      "D": "Patients have less access to healthcare providers."
+    },
+    "answer": "B"
+  }
+]
