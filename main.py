@@ -1,87 +1,53 @@
-from typing import Dict, Any
-from agents.recon_agent import ReconAgent
-from agents.planning_agent import PlanningAgent
-from agents.exploiting_agent import ExploitingAgent
-from agents.reporting_agent import ReportingAgent
+# from langchain_community.llms import ChatOllama
+from langchain_ollama import ChatOllama
+from langchain.agents import AgentExecutor, create_openai_tools_agent
+from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain.memory import ConversationBufferMemory
+# from tools import scan_network, web_search, cve_search
+from src.tools import scan_network, web_search, cve_search
 
-class HealthcareSecurityOrchestrator:
-    def __init__(self):
-        print("\n[Orchestrator] Initializing healthcare security assessment system...")
-        self.recon_agent = ReconAgent()
-        self.planning_agent = PlanningAgent()
-        self.exploiting_agent = ExploitingAgent()
-        self.reporting_agent = ReportingAgent()
-        print("[Orchestrator] All agents initialized successfully")
-    
-    def run_assessment(self, target_network: str) -> Dict[str, Any]:
-        """
-        Run a complete security assessment of the target network.
-        
-        Args:
-            target_network: The network to assess (e.g., "192.168.1.0/24")
-            
-        Returns:
-            Dict containing the complete assessment report
-        """
-        print(f"\n[Orchestrator] Starting security assessment for network: {target_network}")
-        
-        # Step 1: Reconnaissance
-        print("\n[Orchestrator] Step 1: Starting network reconnaissance...")
-        recon_results = self.recon_agent.process({
-            "target_network": target_network
-        })
-        print("[Orchestrator] Reconnaissance completed")
-        
-        # Step 2: Planning for each identified device
-        print("\n[Orchestrator] Step 2: Starting vulnerability planning...")
-        planning_results = {}
-        for device in recon_results["identified_devices"]:
-            print(f"\n[Orchestrator] Planning for device: {device['type']} ({device['ip']})")
-            planning_results[device["ip"]] = self.planning_agent.process({
-                "device_info": device
-            })
-        print("[Orchestrator] Vulnerability planning completed")
-        
-        # Step 3: Exploitation research for each vulnerability
-        print("\n[Orchestrator] Step 3: Starting exploitation research...")
-        exploit_results = {}
-        for device_ip, plan in planning_results.items():
-            for cve in plan["cve_results"]:
-                print(f"\n[Orchestrator] Researching exploit for {device_ip} - {cve['cve_id']}")
-                exploit_results[f"{device_ip}_{cve['cve_id']}"] = self.exploiting_agent.process({
-                    "cve_info": cve
-                })
-        print("[Orchestrator] Exploitation research completed")
-        
-        # Step 4: Generate final report
-        print("\n[Orchestrator] Step 4: Generating final report...")
-        final_report = self.reporting_agent.process({
-            "recon_data": recon_results,
-            "planning_data": planning_results,
-            "exploit_data": exploit_results
-        })
-        print("[Orchestrator] Final report generated")
-        
-        return final_report
+# Initialize the LLM
+llm = ChatOllama(model="llama3.2:3b")
+
+# The tools are already decorated with @tool, so we can use them directly
+tools = [scan_network, web_search, cve_search]
+
+# Create the prompt template
+prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are a cybersecurity assistant that helps analyze network security.
+    You have access to tools that can scan networks, search for vulnerabilities, and look up CVE information.
+    Only use the tools if you do not have information about the subject being asked.
+    If you don't have enough information to use a tool, ask for clarification."""),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("human", "{input}"),
+    MessagesPlaceholder(variable_name="agent_scratchpad"),
+])
+
+# Create memory for conversation history
+memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+
+# Create the agent
+agent = create_openai_tools_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools, memory=memory, verbose=True)
 
 def main():
-    # Example usage
-    print("\n=== Healthcare Security Assessment System ===")
-    orchestrator = HealthcareSecurityOrchestrator()
-    target_network = "192.168.1.0/24"  # Example network
+    # Example prompts to test the agent
+    test_prompts = [
+        # "check devices on my network",
+        # "tell me about the vulnerabilities associated with the commvault command centre",
+        # "tell me about CVE-2023-1234",
+        # "tell me about the CVE with ID CVE-2025-34028",
+        "do you know anything about the CVE-2021-44228 vulnerability",
+        # "tell me about any CVEs you found",
+    ]
     
-    try:
-        print(f"\nStarting assessment for network: {target_network}")
-        report = orchestrator.run_assessment(target_network)
-        print("\n=== Assessment Completed Successfully! ===")
-        print("\nExecutive Summary:")
-        print(report["executive_summary"])
-        print("\nDetailed Report:")
-        print(report["detailed_report"])
-        print("\nRecommendations:")
-        print(report["recommendations"])
-    except Exception as e:
-        print(f"\nError during assessment: {str(e)}")
+    for prompt in test_prompts:
+        print(f"\nTesting prompt: {prompt}")
+        try:
+            response = agent_executor.invoke({"input": prompt})
+            print(f"Response: {response['output']}")
+        except Exception as e:
+            print(f"Error processing prompt: {str(e)}")
 
 if __name__ == "__main__":
     main() 
