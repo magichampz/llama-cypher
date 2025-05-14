@@ -7,7 +7,9 @@ from langchain.memory import ConversationBufferMemory
 from src.tools import scan_network, web_search, cve_search
 
 # Initialize the LLM
-llm = ChatOllama(model="llama3.2:3b")
+# llm = ChatOllama(model="llama3.2:1b")
+llm = ChatOllama(model="llama3b-instruct-og")
+
 
 # The tools are already decorated with @tool, so we can use them directly
 tools = [scan_network, web_search, cve_search]
