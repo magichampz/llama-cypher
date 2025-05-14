@@ -1,0 +1,663 @@
+{
+  "topics": [
+    {
+      "name": "Penetration Testing Lifecycle, Workflows, Methodologies",
+      "subtopics": [
+        {
+          "name": "Planning Phase",
+          "keywords": [
+            "Rules of Engagement",
+            "Scope Definition",
+            "Threat Modeling",
+            "Risk Assessment",
+            "Compliance Requirements",
+            "HIPAA Considerations",
+            "FDA Guidelines",
+            "Medical Device Classification",
+            "Patient Safety Impact Assessment"
+          ]
+        },
+        {
+          "name": "Reconnaissance",
+          "keywords": [
+            "Passive Reconnaissance",
+            "Active Reconnaissance",
+            "OSINT",
+            "Network Mapping",
+            "WHOIS Lookup",
+            "DNS Enumeration",
+            "Shodan",
+            "Medical Device Inventory",
+            "Healthcare Network Topology",
+            "Vendor Documentation Analysis",
+            "Medical Device Firmware Analysis"
+          ]
+        },
+        {
+          "name": "Scanning",
+          "keywords": [
+            "Port Scanning",
+            "Service enumeration",
+            "Banner grabbing",
+            "OpenVAS",
+            "Nmap",
+            "Metasploit",
+            "Nessus",
+            "Medical Device Protocol Analysis",
+            "DICOM Service Discovery",
+            "HL7 Interface Mapping",
+            "PACS System Enumeration",
+            "Medical IoT Device Discovery"
+          ]
+        },
+        {
+          "name": "Vulnerability Assessment",
+          "keywords": [
+            "CVE Lookup",
+            "Exploit-DB",
+            "Nikto",
+            "False Positive Verification",
+            "Prioritization of Vulnerabilities",
+            "Medical Device CVEs",
+            "Healthcare-Specific Vulnerabilities",
+            "IoMT Device Firmware Analysis",
+            "Medical Protocol Vulnerabilities",
+            "Medical Device Authentication Testing",
+            "Medical Data Encryption Analysis",
+            "Notable CVEs: CVE-2014-0160 (Heartbleed)",
+            "Notable CVEs: CVE-2017-5638 (Apache Struts)",
+            "Notable CVEs: CVE-2021-34527 (PrintNightmare)",
+            "CVE Case Studies",
+            "CVE Related Questions",
+            "CWE Related Questions",
+            "Notable CWEs: CWE-79 (XSS)",
+            "Notable CWEs: CWE-89 (SQL Injection)",
+            "Notable CWEs: CWE-120 (Buffer Overflow)"
+          ]
+        },
+        {
+          "name": "Exploitation",
+          "keywords": [
+            "Vulnerability Exploitation",
+            "Privilege Escalation Techniques",
+            "Post-Exploitation Activities",
+            "Exploitation Tools",
+            "Exploitation Frameworks"
+          ]
+        },
+        {
+          "name": "Post-Exploitation",
+          "keywords": [
+            "Persistence Mechanisms",
+            "Lateral Movement",
+            "Data Exfiltration",
+            "TTPs (Tactics, Techniques, Procedures)",
+            "Covering Tracks",
+            "Maintaining Access",
+            "Impact Assessment",
+            "Clearing Logs",
+            "Medical Data Access",
+            "Patient Record Access",
+            "Medical Device Control",
+            "Healthcare Network Access",
+            "Medical IoT Device Control"
+          ]
+        },
+        {
+          "name": "Reporting",
+          "keywords": [
+            "Executive Summary",
+            "Technical Details",
+            "Risk Ratings",
+            "Remediation Recommendations",
+            "Mitigation Strategies",
+            "HIPAA Compliance Impact",
+            "FDA Regulatory Impact",
+            "Patient Safety Impact",
+            "Medical Device Security Recommendations",
+            "Healthcare Network Security Improvements",
+            "IoMT Security Enhancements"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Attack Vectors",
+      "subtopics": [
+        {
+          "name": "Physical Attack Vectors",
+          "keywords": [
+            "Social Engineering",
+            "Tailgating",
+            "Dumpster Diving",
+            "Hardware Tampering",
+            "Physical Theft",
+            "Insider Threats",
+            "Facility Access Breaches"
+          ]
+        },
+        {
+          "name": "Digital Attack Vectors",
+          "keywords": [
+            "Phishing",
+            "Malware",
+            "Ransomware",
+            "Denial of Service (DoS)",
+            "Distributed Denial of Service (DDoS)",
+            "Man-in-the-Middle (MitM)",
+            "SQL Injection",
+            "Cross-Site Scripting (XSS)",
+            "Zero-Day Exploits",
+            "Credential Stuffing",
+            "Brute Force Attacks"
+          ]
+        },
+        {
+          "name": "Supply Chain Attack Vectors",
+          "keywords": [
+            "Third-Party Software Vulnerabilities",
+            "Hardware Supply Chain Compromise",
+            "Software Update Manipulation",
+            "Vendor Compromise",
+            "Outsourced Service Exploitation",
+            "Component Tampering"
+          ]
+        },
+        {
+          "name": "Human Factor Attack Vectors",
+          "keywords": [
+            "Social Engineering",
+            "Phishing",
+            "Pretexting",
+            "Baiting",
+            "Quid Pro Quo",
+            "Tailgating",
+            "Shoulder Surfing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mitigation and Security Hardening",
+      "subtopics": [
+        {
+          "name": "Device-Level Security",
+          "keywords": [
+            "Secure Boot",
+            "Firmware Integrity Checks",
+            "Device Encryption",
+            "Access Control Mechanisms",
+            "Patch Management",
+            "Device Authentication",
+            "Physical Security Measures",
+            "Endpoint Detection and Response (EDR)",
+            "Device Configuration Management",
+            "Critical Component Identification"
+          ]
+        },
+        {
+          "name": "Network-Level Security",
+          "keywords": [
+            "Network Segmentation",
+            "Firewalls",
+            "Intrusion Detection Systems (IDS)",
+            "Intrusion Prevention Systems (IPS)",
+            "Virtual Private Networks (VPNs)",
+            "Network Access Control (NAC)",
+            "Secure Network Protocols",
+            "Traffic Monitoring and Analysis",
+            "Zero Trust Architecture"
+          ]
+        },
+        {
+          "name": "Application-Level Security",
+          "keywords": [
+            "Secure Software Development Lifecycle (SDLC)",
+            "Code Reviews and Audits",
+            "Application Whitelisting",
+            "Input Validation",
+            "Output Encoding",
+            "Authentication and Authorization",
+            "Session Management",
+            "Application Firewalls",
+            "Vulnerability Scanning and Patching",
+            "Sandboxing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Incident Response and Recovery",
+      "subtopics": [
+        {
+          "name": "Preparation",
+          "keywords": [
+            "Incident Response Plan",
+            "Medical Device Incident Protocols",
+            "Network Security Incident Guidelines",
+            "Training and Awareness Programs",
+            "Incident Response Team Formation",
+            "Communication Plans",
+            "Legal and Regulatory Compliance",
+            "Healthcare Data Breach Preparedness"
+          ]
+        },
+        {
+          "name": "Detection and Analysis",
+          "keywords": [
+            "Intrusion Detection Systems (IDS)",
+            "Security Information and Event Management (SIEM)",
+            "Anomaly Detection",
+            "Medical Device Monitoring",
+            "Network Traffic Analysis",
+            "Log Analysis",
+            "Threat Intelligence",
+            "Incident Classification"
+          ]
+        },
+        {
+          "name": "Containment, Eradication, and Recovery",
+          "keywords": [
+            "Containment Strategies",
+            "Medical Device Isolation",
+            "Network Segmentation",
+            "Malware Removal",
+            "System Restoration",
+            "Data Recovery",
+            "Healthcare Service Continuity",
+            "Post-Incident Cleanup"
+          ]
+        },
+        {
+          "name": "Post-Incident Activity",
+          "keywords": [
+            "Incident Reporting",
+            "Root Cause Analysis",
+            "Lessons Learned",
+            "Policy and Procedure Updates",
+            "Medical Device Security Enhancements",
+            "Network Security Improvements",
+            "Regulatory Reporting",
+            "Healthcare Compliance Review"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Compliance and Legal Requirements",
+      "subtopics": [
+        {
+          "name": "HIPAA Compliance",
+          "keywords": [
+            "Protected Health Information (PHI)",
+            "HIPAA Privacy Rule",
+            "HIPAA Security Rule",
+            "HIPAA Breach Notification Rule",
+            "Business Associate Agreements",
+            "Patient Rights and Access",
+            "Healthcare Data Encryption",
+            "Risk Assessment and Management"
+          ]
+        },
+        {
+          "name": "GDPR Compliance",
+          "keywords": [
+            "General Data Protection Regulation (GDPR)",
+            "Data Subject Rights",
+            "Data Protection Impact Assessments (DPIA)",
+            "Consent Management",
+            "Data Breach Notification",
+            "Data Protection Officer (DPO)",
+            "Cross-Border Data Transfers",
+            "Privacy by Design and Default"
+          ]
+        },
+        {
+          "name": "MHRA Compliance",
+          "keywords": [
+            "Medicines and Healthcare products Regulatory Agency (MHRA)",
+            "Medical Device Regulations",
+            "Clinical Trials Regulations",
+            "Pharmacovigilance",
+            "Device Safety and Performance",
+            "Regulatory Submissions",
+            "Post-Market Surveillance",
+            "Quality Management Systems (QMS)"
+          ]
+        },
+        {
+          "name": "Privacy and Data Protection",
+          "keywords": [
+            "Data Privacy Laws",
+            "Data Protection Policies",
+            "Information Security Management",
+            "Data Minimization",
+            "Anonymization and Pseudonymization",
+            "Third-Party Data Sharing",
+            "Data Retention and Disposal",
+            "Privacy Impact Assessments (PIA)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Security Testing of Medical Devices",
+      "subtopics": [
+        {
+          "name": "Wireless Security",
+          "keywords": [
+            "Bluetooth Security",
+            "Wi-Fi Security",
+            "Zigbee Security",
+            "RFID Security",
+            "Wireless Encryption Protocols",
+            "Wireless Intrusion Detection Systems (WIDS)",
+            "Wireless Penetration Testing",
+            "MQTT Protocol Security Testing"
+          ]
+        },
+        {
+          "name": "Hardware Hacking",
+          "keywords": [
+            "Reverse Engineering",
+            "Chip-Off Forensics",
+            "JTAG Debugging",
+            "Side-Channel Attacks",
+            "Firmware Extraction",
+            "Hardware Trojans",
+            "Physical Tampering"
+          ]
+        },
+        {
+          "name": "Medical Device Specific Testing",
+          "keywords": [
+            "Firmware Analysis",
+            "Hardware Security Testing",
+            "Medical Protocol Testing",
+            "Device Authentication Testing",
+            "Medical Data Encryption Testing",
+            "Device Update Mechanism Testing",
+            "Medical IoT Security Testing",
+            "Medical Device Network Security",
+            "Medical Device Physical Security",
+            "Medical Device Supply Chain Security"
+          ]
+        },
+        {
+          "name": "Healthcare Network Testing",
+          "keywords": [
+            "Network Segmentation Testing",
+            "Medical VLAN Security",
+            "Healthcare Wireless Security",
+            "Medical Device Isolation Testing",
+            "Healthcare Cloud Security",
+            "Medical Data Storage Security",
+            "Healthcare Authentication Systems",
+            "Medical Device Management Systems",
+            "Healthcare Backup Systems",
+            "Medical Disaster Recovery Testing"
+          ]
+        },
+        {
+          "name": "Compliance and Regulatory Testing",
+          "keywords": [
+            "HIPAA Security Testing",
+            "FDA Cybersecurity Requirements",
+            "ISO 13485 Security Testing",
+            "IEC 62304 Security Testing",
+            "NIST Cybersecurity Framework",
+            "Medical Device Security Standards",
+            "Healthcare Privacy Testing",
+            "Medical Data Protection Testing",
+            "Medical Device Certification Testing",
+            "Healthcare Compliance Validation"
+          ]
+        },
+        {
+          "name": "Software Security Testing",
+          "keywords": [
+            "Static Application Security Testing (SAST)",
+            "Dynamic Application Security Testing (DAST)",
+            "Software Composition Analysis (SCA)",
+            "Fuzz Testing",
+            "Code Review and Analysis",
+            "Secure Code Practices"
+          ]
+        },
+        {
+          "name": "User Interface Security Testing",
+          "keywords": [
+            "Usability Testing for Security Features",
+            "User Authentication Mechanisms",
+            "Session Management",
+            "User Data Privacy Controls"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exploits",
+      "subtopics": [
+        {
+          "name": "Network Exploits",
+          "keywords": [
+            "Man-in-the-Middle (MitM)",
+            "Denial of Service (DoS)",
+            "Distributed Denial of Service (DDoS)",
+            "Packet Sniffing",
+            "ARP Spoofing",
+            "DNS Spoofing",
+            "Zero-Day Network Exploits"
+          ]
+        },
+        {
+          "name": "Application Exploits",
+          "keywords": [
+            "SQL Injection",
+            "Cross-Site Scripting (XSS)",
+            "Remote Code Execution",
+            "Buffer Overflow",
+            "Command Injection",
+            "Directory Traversal",
+            "Zero-Day Application Exploits",
+            "Privilege Escalation",
+            "Credential Dumping"
+          ]
+        },
+        {
+          "name": "Hardware Exploits",
+          "keywords": [
+            "Side-Channel Attacks",
+            "Firmware Exploitation",
+            "Chip-Off Attacks",
+            "JTAG Exploitation",
+            "Hardware Trojans",
+            "Medical Device Firmware Exploitation",
+            "DICOM Exploitation"
+          ]
+        },
+        {
+          "name": "Social Engineering Exploits",
+          "keywords": [
+            "Phishing",
+            "Pretexting",
+            "Baiting",
+            "Quid Pro Quo",
+            "Tailgating"
+          ]
+        },
+        {
+          "name": "Malware Exploits",
+          "keywords": [
+            "Malware",
+            "Ransomware",
+            "Trojan Horses",
+            "Worms",
+            "Spyware",
+            "Adware",
+            "Medical Device Malware"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Common Security Tools and Usage",
+      "subtopics": [
+        {
+          "name": "Network Scanning Tools",
+          "keywords": [
+            "Nmap",
+            "Angry IP Scanner",
+            "Advanced IP Scanner",
+            "Zenmap",
+            "Netcat",
+            "Masscan",
+            "MQTT Security Analysis Tools"
+          ]
+        },
+        {
+          "name": "Vulnerability Assessment Tools",
+          "keywords": [
+            "Nessus",
+            "OpenVAS",
+            "Qualys",
+            "Nexpose",
+            "Nikto",
+            "Burp Suite"
+          ]
+        },
+        {
+          "name": "Exploitation Frameworks",
+          "keywords": [
+            "Metasploit",
+            "Canvas",
+            "Core Impact",
+            "Exploit-DB",
+            "Cobalt Strike"
+          ]
+        },
+        {
+          "name": "Web Application Security Tools",
+          "keywords": [
+            "OWASP ZAP",
+            "Burp Suite",
+            "Acunetix",
+            "W3AF",
+            "Nikto",
+            "SQLMap"
+          ]
+        },
+        {
+          "name": "Wireless Security Tools",
+          "keywords": [
+            "Aircrack-ng",
+            "Kismet",
+            "Wireshark",
+            "Reaver",
+            "Fern WiFi Cracker"
+          ]
+        },
+        {
+          "name": "Forensics and Analysis Tools",
+          "keywords": [
+            "Autopsy",
+            "FTK Imager",
+            "EnCase",
+            "Volatility",
+            "Sleuth Kit",
+            "Xplico"
+          ]
+        },
+        {
+          "name": "Password Cracking Tools",
+          "keywords": [
+            "John the Ripper",
+            "Hashcat",
+            "Hydra",
+            "Cain and Abel",
+            "Medusa"
+          ]
+        },
+        {
+          "name": "Sniffing and Packet Analysis Tools",
+          "keywords": [
+            "Wireshark",
+            "tcpdump",
+            "Ettercap",
+            "Tshark",
+            "NetworkMiner",
+            "Colasoft Capsa"
+          ]
+        },
+        {
+          "name": "Recon and OSINT Tools",
+          "keywords": [
+            "Maltego",
+            "Recon-ng",
+            "theHarvester",
+            "Shodan",
+            "SpiderFoot",
+            "FOCA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Internet of Medical Things (IoMT) and Medical Technologies",
+      "subtopics": [
+        {
+          "name": "Remote Patient Monitoring",
+          "keywords": [
+            "Wearable Health Devices",
+            "Telehealth Platforms",
+            "Continuous Glucose Monitors",
+            "Remote Cardiac Monitoring",
+            "Blood Pressure Monitoring",
+            "Pacemakers"
+          ]
+        },
+        {
+          "name": "Smart Medical Devices",
+          "keywords": [
+            "Smart Infusion Pumps",
+            "Connected Inhalers",
+            "Smart Implants",
+            "Connected Surgical Instruments",
+            "Smart Diagnostic Devices"
+          ]
+        },
+        {
+          "name": "Healthcare Facility Management",
+          "keywords": [
+            "Asset Tracking Systems",
+            "Smart HVAC Systems",
+            "Automated Lighting Controls",
+            "Energy Management Systems",
+            "Smart Security Systems",
+            "DICOM Servers"
+          ]
+        },
+        {
+          "name": "Data Analytics and AI in IoMT",
+          "keywords": [
+            "Predictive Analytics",
+            "AI-Driven Diagnostics",
+            "Patient Data Integration",
+            "Real-Time Health Monitoring",
+            "Clinical Decision Support Systems"
+          ]
+        },
+        {
+          "name": "IoMT Security Challenges",
+          "keywords": [
+            "Device Authentication",
+            "Data Encryption",
+            "Network Security",
+            "Regulatory Compliance",
+            "Privacy Concerns"
+          ]
+        }
+      ]
+    }
+  ]
+}
