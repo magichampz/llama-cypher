@@ -2,37 +2,68 @@ import json
 import os
 from openai import OpenAI
 from collections import defaultdict
+from prompts import MCQ_GENERATION_PROMPT_1, SYSTEM_MESSAGE
 
 
 def generate_mcq_pairs(topic, subtopic):
-    prompt = f"""
-    Topic: {topic}
-    Subtopic: {subtopic}
-    Generate 4 multiple choice questions (MCQs) about this topic and subtopic in healthcare cybersecurity.
-    Each question should have a clear, concise question stem, 4 answer options (A, B, C, D), and one correct answer.
-
-    For each MCQ, output a JSON object with the following fields:
-    - 'topic': the topic name
-    - 'subtopic': the subtopic name
-    - 'question': the question stem
-    - 'options': an array of 4 options labeled A, B, C, D (DO NOT include trailing commas after the last option)
-    - 'correct_answer': the letter of the correct option (A, B, C, or D)
-
-    Return the entries as a JSON array of 4 objects.
-    DO NOT include any markdown code block markers in the response.
-    IMPORTANT: Do not include trailing commas in any JSON arrays.
-    """
+    prompt = MCQ_GENERATION_PROMPT_1.format(topic=topic, subtopic=subtopic)
     print(f"\nGenerating MCQs for: {topic} > {subtopic}")
     print("--------------------------------")
     response = client.chat.completions.create(
         model="gpt-4.1",
         temperature=0.7,  # Slightly higher temperature for more diverse questions
         messages=[
-            {"role": "system", "content": "You are a cybersecurity expert specialized in healthcare security and medical device security. Focus on generating clear, accurate, and practical multiple choice questions that test understanding of medical cybersecurity concepts. Ensure all JSON output is valid without trailing commas."},
+            {"role": "system", "content": SYSTEM_MESSAGE},
             {"role": "user", "content": prompt}
         ]
     )
     return response.choices[0].message.content
+
+def validate_json_response(content):
+    try:
+        # Try to parse the JSON
+        data = json.loads(content)
+        
+        # Validate structure
+        if not isinstance(data, list):
+            raise ValueError("Response must be a JSON array")
+            
+        for item in data:
+            required_fields = ['topic', 'subtopic', 'question', 'options', 'correct_answer']
+            for field in required_fields:
+                if field not in item:
+                    raise ValueError(f"Missing required field: {field}")
+            
+            # Validate options array
+            if not isinstance(item['options'], list) or len(item['options']) != 4:
+                raise ValueError("Options must be an array with exactly 4 items")
+            
+            # Validate correct_answer
+            if item['correct_answer'] not in ['A', 'B', 'C', 'D']:
+                raise ValueError("Correct answer must be A, B, C, or D")
+            
+            # Validate string content
+            for field in ['topic', 'subtopic', 'question']:
+                if not isinstance(item[field], str):
+                    raise ValueError(f"Field '{field}' must be a string")
+                if '\n' in item[field]:
+                    raise ValueError(f"Field '{field}' contains newlines")
+            
+            for option in item['options']:
+                if not isinstance(option, str):
+                    raise ValueError("All options must be strings")
+                if '\n' in option:
+                    raise ValueError("Options cannot contain newlines")
+        
+        return True
+    except json.JSONDecodeError as e:
+        print(f"JSON parsing error: {e}")
+        print("Raw content:")
+        print(content)
+        return False
+    except ValueError as e:
+        print(f"Validation error: {e}")
+        return False
 
 def main():
     # Load the dataset
@@ -49,18 +80,19 @@ def main():
 
     # Iterate over topics and subtopics to generate MCQ pairs
     mcq_pairs = []
-    for topic in dataset['topics']:
+    for topic in dataset['topics'][:1]:
         print(f"\n=== Processing Topic: {topic['name']} ===")
-        for subtopic in topic['subtopics']:
+        for subtopic in topic['subtopics'][:1]:
             try:
                 mcq_content = generate_mcq_pairs(topic['name'], subtopic['name'])
+                
+                # Validate the response before parsing
+                if not validate_json_response(mcq_content):
+                    print(f"Skipping invalid response for {topic['name']} > {subtopic['name']}")
+                    continue
+                
                 # Parse the JSON response
                 mcq_entries = json.loads(mcq_content)
-                
-                # Print the generated MCQs in a nicely formatted way
-                # print("\nGenerated MCQs:")
-                # print(json.dumps(mcq_entries, indent=2))
-                # print("--------------------------------")
                 
                 # Add each MCQ entry to our collection
                 for entry in mcq_entries:
@@ -75,7 +107,7 @@ def main():
                 print(f"Error processing {topic['name']} > {subtopic['name']}: {e}")
 
     # Save the MCQ pairs to a JSONL file
-    with open('mcq_evaluation.jsonl', 'w') as outfile:
+    with open('mcq_evaluation_5.jsonl', 'w') as outfile:
         for mcq_pair in mcq_pairs:
             json.dump(mcq_pair, outfile)
             outfile.write('\n')
@@ -88,9 +120,9 @@ def main():
     for topic, count in topic_stats.items():
         print(f"- {topic}: {count} MCQs")
 
-    # print("\nBy Subtopic:")
-    # for subtopic, count in subtopic_stats.items():
-    #     print(f"- {subtopic}: {count} MCQs")
+    print("\nBy Subtopic:")
+    for subtopic, count in subtopic_stats.items():
+        print(f"- {subtopic}: {count} MCQs")
 
 if __name__ == '__main__':
     main() 

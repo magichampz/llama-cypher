@@ -1,0 +1,295 @@
+{
+  "topics": [
+    {
+      "name": "Penetration Testing Lifecycle",
+      "subtopics": [
+        {
+          "name": "Pre-Engagement",
+          "keywords": [
+            "Scoping",
+            "Rules of Engagement",
+            "Legal Considerations",
+            "Client Communication",
+            "NDA",
+            "Statement of Work",
+            "Risk Assessment"
+          ]
+        },
+        {
+          "name": "Reconnaissance",
+          "keywords": [
+            "Passive Reconnaissance",
+            "Active Reconnaissance",
+            "OSINT",
+            "WHOIS",
+            "DNS Enumeration",
+            "Google Dorking",
+            "Social Media Profiling",
+            "Shodan",
+            "Maltego"
+          ]
+        },
+        {
+          "name": "Scanning and Enumeration",
+          "keywords": [
+            "Port Scanning",
+            "Service Enumeration",
+            "Nmap",
+            "Masscan",
+            "Banner Grabbing",
+            "SNMP Enumeration",
+            "SMB Enumeration",
+            "LDAP Enumeration",
+            "Vulnerability Scanning",
+            "Nessus",
+            "OpenVAS"
+          ]
+        },
+        {
+          "name": "Exploitation",
+          "keywords": [
+            "Exploit Development",
+            "Metasploit",
+            "Buffer Overflow",
+            "SQL Injection",
+            "Cross-Site Scripting (XSS)",
+            "Command Injection",
+            "Privilege Escalation",
+            "Password Attacks",
+            "Brute Force",
+            "Credential Dumping"
+          ]
+        },
+        {
+          "name": "Post-Exploitation",
+          "keywords": [
+            "Persistence",
+            "Lateral Movement",
+            "Data Exfiltration",
+            "Clearing Tracks",
+            "Maintaining Access",
+            "Privilege Escalation",
+            "Credential Harvesting"
+          ]
+        },
+        {
+          "name": "Reporting",
+          "keywords": [
+            "Executive Summary",
+            "Technical Findings",
+            "Risk Ratings",
+            "Remediation Recommendations",
+            "Proof of Concept",
+            "Screenshots",
+            "Mitigation Strategies"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Penetration Testing Domains",
+      "subtopics": [
+        {
+          "name": "Network Penetration Testing",
+          "keywords": [
+            "Internal Network Testing",
+            "External Network Testing",
+            "Firewall Evasion",
+            "Network Sniffing",
+            "Man-in-the-Middle",
+            "ARP Spoofing",
+            "DNS Spoofing"
+          ]
+        },
+        {
+          "name": "Web Application Penetration Testing",
+          "keywords": [
+            "OWASP Top 10",
+            "SQL Injection",
+            "XSS",
+            "CSRF",
+            "File Inclusion",
+            "Directory Traversal",
+            "Authentication Bypass",
+            "Session Management",
+            "Burp Suite",
+            "ZAP"
+          ]
+        },
+        {
+          "name": "Wireless Penetration Testing",
+          "keywords": [
+            "WEP Cracking",
+            "WPA/WPA2 Attacks",
+            "Rogue Access Points",
+            "Evil Twin",
+            "Bluetooth Attacks",
+            "WiFi Pineapple",
+            "Aircrack-ng"
+          ]
+        },
+        {
+          "name": "Social Engineering",
+          "keywords": [
+            "Phishing",
+            "Spear Phishing",
+            "Pretexting",
+            "Baiting",
+            "Tailgating",
+            "Vishing",
+            "Physical Security Testing"
+          ]
+        },
+        {
+          "name": "Physical Penetration Testing",
+          "keywords": [
+            "Lock Picking",
+            "Badge Cloning",
+            "Physical Bypass",
+            "Dumpster Diving",
+            "Facility Access"
+          ]
+        },
+        {
+          "name": "Cloud Penetration Testing",
+          "keywords": [
+            "AWS Security Testing",
+            "Azure Security Testing",
+            "GCP Security Testing",
+            "Cloud Misconfigurations",
+            "IAM Attacks",
+            "S3 Bucket Enumeration",
+            "Cloud Pentest Tools"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Penetration Testing Tools",
+      "subtopics": [
+        {
+          "name": "Reconnaissance Tools",
+          "keywords": [
+            "theHarvester",
+            "Recon-ng",
+            "Maltego",
+            "Shodan",
+            "Censys"
+          ]
+        },
+        {
+          "name": "Scanning Tools",
+          "keywords": [
+            "Nmap",
+            "Masscan",
+            "Unicornscan",
+            "Netcat"
+          ]
+        },
+        {
+          "name": "Vulnerability Scanners",
+          "keywords": [
+            "Nessus",
+            "OpenVAS",
+            "Qualys",
+            "Nikto"
+          ]
+        },
+        {
+          "name": "Exploitation Frameworks",
+          "keywords": [
+            "Metasploit",
+            "Cobalt Strike",
+            "Impacket",
+            "Exploit-DB"
+          ]
+        },
+        {
+          "name": "Web Application Tools",
+          "keywords": [
+            "Burp Suite",
+            "OWASP ZAP",
+            "SQLMap",
+            "WFuzz",
+            "Dirbuster"
+          ]
+        },
+        {
+          "name": "Password Cracking Tools",
+          "keywords": [
+            "John the Ripper",
+            "Hashcat",
+            "Hydra",
+            "Medusa"
+          ]
+        },
+        {
+          "name": "Post-Exploitation Tools",
+          "keywords": [
+            "Mimikatz",
+            "Empire",
+            "BloodHound",
+            "PowerSploit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Penetration Testing Methodologies & Standards",
+      "subtopics": [
+        {
+          "name": "Industry Standards",
+          "keywords": [
+            "PTES",
+            "OWASP",
+            "NIST SP 800-115",
+            "OSSTMM",
+            "CREST"
+          ]
+        },
+        {
+          "name": "Reporting Standards",
+          "keywords": [
+            "CVSS",
+            "Vulnerability Scoring",
+            "Risk Assessment",
+            "Remediation Guidance"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Specialized Penetration Testing Topics",
+      "subtopics": [
+        {
+          "name": "Red Teaming",
+          "keywords": [
+            "Adversary Simulation",
+            "Assumed Breach",
+            "Purple Teaming",
+            "TTPs",
+            "MITRE ATT&CK"
+          ]
+        },
+        {
+          "name": "Blue Team Evasion",
+          "keywords": [
+            "EDR Bypass",
+            "AV Evasion",
+            "Living off the Land",
+            "C2 Channels"
+          ]
+        },
+        {
+          "name": "Reporting and Communication",
+          "keywords": [
+            "Executive Reporting",
+            "Technical Reporting",
+            "Debriefing",
+            "Client Communication"
+          ]
+        }
+      ]
+    }
+  ]
+} 
