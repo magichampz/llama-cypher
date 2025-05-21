@@ -2,8 +2,10 @@ import json
 from openai import OpenAI
 import os
 from langchain_ollama import ChatOllama
+import anthropic
 
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+claude_client = anthropic.Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
 
 def ask_gpt4o(question, options, model_name):
     prompt = f"""
@@ -17,6 +19,7 @@ Answer the following multiple choice question by giving only the letter of the c
         max_tokens=1,
         temperature=0
     )
+    print(response.choices[0].message.content)
     return response.choices[0].message.content.strip().upper()
 
 def ask_llama(question, options, model_name):
@@ -28,7 +31,27 @@ Answer the following multiple choice question by giving only the letter of the c
         prompt += f"{option}\n"
     prompt += "\nAnswer:"
     response = llama.invoke(prompt)
+    print(response.content)
+    # print()
     return response.content.strip()[0].upper()
+
+def ask_claude(question, options, model_name):
+    prompt = f"""
+Answer the following multiple choice question by giving only the letter of the correct answer (A, B, C, or D):\n\n{question}\nOptions:\n"""
+    for option in options:
+        prompt += f"{option}\n"
+    prompt += "\nAnswer:"
+    
+    response = claude_client.messages.create(
+        model=model_name,
+        max_tokens=1,
+        temperature=0,
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+    print(response.content[0].text)
+    return response.content[0].text.strip().upper()
 
 def evaluate(model_func, model_name, questions):
     correct = 0
@@ -89,20 +112,38 @@ def load_questions(file_path):
     with open(file_path, 'r') as f:
         for line in f:
             questions.append(json.loads(line))
-    return questions
+    return questions[:4]
 
 if __name__ == "__main__":
     # Load questions from the JSONL file
-    questions = load_questions('mcq_evaluation_4.jsonl')
+    questions = load_questions('mcq_evaluation_new_1.jsonl')
     
     # Uncomment the models you want to evaluate
-    evaluate(ask_gpt4o, "gpt-4.1", questions) # 192/192 (1), 191/192 (2), 156/159 (3)
+    
+    # evaluate(ask_gpt4o, "gpt-4.1", questions) # 192/192 (1), 191/192 (2), 156/159 (3)
+    evaluate(ask_claude, "claude-3-5-haiku-latest", questions)
+    
     # evaluate(ask_llama, "llama3.1:8b", questions) # 182/192 (1), 180/192 (2)
     # evaluate(ask_llama, "llama3.2:3b", questions) # 173/192(1), 171/192(2)
     # evaluate(ask_llama, "llama3.2:1b", questions) # 108/192 (1)
-    evaluate(ask_llama, "unsloth8bi", questions)
-    evaluate(ask_llama, "llama3b-instruct-og", questions)
-    evaluate(ask_llama, "llama1b-instruct-og", questions)
+    
+    # evaluate(ask_llama, "unsloth8bi", questions)
+    # evaluate(ask_llama, "llama3b-instruct-og", questions)
+    # evaluate(ask_llama, "llama1b-instruct-og", questions)
+    
     # evaluate(ask_llama, "llama3b-tuned-1", questions)
+    
+    
+    # comparing base models vs tuned models
+    # llama 3.2 3b base
+    # evaluate(ask_llama, "hf.co/unsloth/Llama-3.2-3B-Instruct-GGUF:Q4_K_M", questions)
+    
+    # llama 3.2 3b tuned
+    # evaluate(ask_llama, "hf.co/magichampz/llama-3b-tuned-1:Q4_K_M", questions)
+    
+    
+    
+    
+    
     
     

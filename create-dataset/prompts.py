@@ -2,13 +2,47 @@ question_focuses = [
     "Subtle differences between similar concepts",
     "Edge cases and non-obvious implications",
     "Multi-step reasoning and cause-effect relationships",
-    "Application of knowledge to novel situations",
+    "Ability to apply knowledge to novel situations",
     "Recognition of subtle security implications",
     "Understanding of complex regulatory requirements"
 ]
 
 # duplicate mcq generation prompt 1
 # to do: make more specific prompts for different kinds of questions
+
+MCQ_GENERATION_PROMPT_2 = """
+    Topic: {topic}
+    Subtopic: {subtopic}
+    
+    Generate a highly challenging multiple choice questions (MCQs) about this topic and subtopic in healthcare cybersecurity.
+    The question should test understanding of {question_focus}.
+    
+    Guidelines for creating challenging questions:
+    1. Focus on complex, nuanced scenarios that require deep domain knowledge in medical device cybersecurity
+    2. Make wrong options plausible and require careful analysis to distinguish
+    3. Avoid questions that can be answered through simple pattern matching or basic knowledge
+
+
+    For each MCQ, output a JSON object with the following fields:
+    - 'topic': the topic name
+    - 'subtopic': the subtopic name
+    - 'question': a question stem that presents a complex scenario or concept
+    - 'options': an array of 4 carefully crafted answer options labeled A, B, C, D
+    - 'correct_answer': a single letter representing the correct option (A, B, C, or D)
+
+    JSON Formatting Rules:
+    1. Do NOT include trailing commas in arrays or objects
+    2. String Formatting Rules:
+       - Use double quotes for all strings
+       - Only escape double quotes within strings with a backslash: \\"
+       - Do NOT escape single quotes (apostrophes) - they are valid in JSON strings
+       - Do not use any other escape sequences
+       - Do not include newlines within strings
+
+    Return the question as a JSON object.
+    DO NOT include any markdown code block markers in the response.
+    """
+
 
 MCQ_GENERATION_PROMPT_1 = """
     Topic: {topic}
