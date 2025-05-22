@@ -19,7 +19,7 @@ def ask_gpt(question, model_name):
     response = client.chat.completions.create(
         model=model_name,
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.7
+        temperature=0.1
     )
     return response.choices[0].message.content.strip()
 
@@ -28,7 +28,10 @@ def ask_llama(question, model_name):
     prompt = f"""Please answer the following question concisely in 2-3 sentences:
 
 {question}"""
-    llama = ChatOllama(model=model_name)
+    llama = ChatOllama(
+        model=model_name,
+        temperature=0.1
+        )
     response = llama.invoke(prompt)
     return response.content.strip()
 
@@ -74,14 +77,14 @@ def get_llm_judge_comparison(question, response1, response2, max_retries=3, retr
             print(f"Unexpected error: {str(e)}")
             return "WINNER: TIE\nREASONING: Error occurred during judgment."
 
-def evaluate_models(model1_name, model2_name, model1_type, model2_type, num_questions=20):
+def evaluate_models(model1_name, model2_name, model1_type, model2_type, selected_questions, num_questions=50):
     """Evaluate two models using Claude as a judge"""
     # Load questions
-    with open('training_data.jsonl', 'r') as f:
-        all_questions = [json.loads(line) for line in f]
+    # with open('training_data_2.jsonl', 'r') as f:
+    #     all_questions = [json.loads(line) for line in f]
     
-    # Randomly select questions
-    selected_questions = random.sample(all_questions, num_questions)
+    # # Randomly select questions
+    # selected_questions = random.sample(all_questions, num_questions)
     
     # Initialize counters
     model1_wins = 0
@@ -93,7 +96,7 @@ def evaluate_models(model1_name, model2_name, model1_type, model2_type, num_ques
     
     for i, q in enumerate(selected_questions, 1):
         question = q['question']
-        print(f"\nQuestion {i}: {question}")
+        # print(f"\nQuestion {i}: {question}")
         
         # Get responses from both models
         if model1_type == 'gpt':
@@ -105,13 +108,15 @@ def evaluate_models(model1_name, model2_name, model1_type, model2_type, num_ques
             response2 = ask_gpt(question, model2_name)
         else:
             response2 = ask_llama(question, model2_name)
+            
+            
         
-        print(f"\n{model1_name} response: {response1}")
-        print(f"\n{model2_name} response: {response2}")
+        # print(f"\n{model1_name} response: {response1}")
+        # print(f"\n{model2_name} response: {response2}")
         
         # Get Claude's judgment
         judgment = get_llm_judge_comparison(question, response1, response2)
-        print(f"\nClaude's judgment:\n{judgment}")
+        # print(f"\nClaude's judgment:\n{judgment}")
         
         # Parse the judgment
         if "WINNER: 1" in judgment:
@@ -121,7 +126,7 @@ def evaluate_models(model1_name, model2_name, model1_type, model2_type, num_ques
         else:
             ties += 1
             
-        print("-" * 80)
+        # print("-" * 80)
     
     # Print final results
     print("\nFinal Results:")
@@ -130,10 +135,20 @@ def evaluate_models(model1_name, model2_name, model1_type, model2_type, num_ques
     print(f"Ties: {ties}")
     print(f"\n{model1_name} win rate: {(model1_wins/num_questions)*100:.1f}%")
     print(f"{model2_name} win rate: {(model2_wins/num_questions)*100:.1f}%")
-
+    print("-" * 80)
 if __name__ == "__main__":
     # Example usage:
     # evaluate_models("gpt-4.1", "hf.co/unsloth/Llama-3.2-3B-Instruct-GGUF:Q4_K_M", "gpt", "llama")
     # evaluate_models("gpt-4.1", "hf.co/magichampz/llama-3b-tuned-1:Q4_K_M", "gpt", "llama")
-    evaluate_models("hf.co/magichampz/llama-3b-tuned-1:Q4_K_M", "hf.co/unsloth/Llama-3.2-3B-Instruct-GGUF:Q4_K_M", "llama", "llama")
+    num_questions=50
+    
+    with open('training_data_2.jsonl', 'r') as f:
+        all_questions = [json.loads(line) for line in f]
+    
+    # Randomly select questions
+    selected_questions = random.sample(all_questions, num_questions)
+    print("Number of Questions: ", num_questions)
+    
+    evaluate_models("hf.co/magichampz/llama-3b-tuned-2:Q4_K_M", "hf.co/unsloth/Llama-3.2-3B-Instruct-GGUF:Q4_K_M", "llama", "llama", selected_questions, num_questions)
+    evaluate_models("hf.co/magichampz/llama-3b-tuned-1:Q4_K_M", "hf.co/unsloth/Llama-3.2-3B-Instruct-GGUF:Q4_K_M", "llama", "llama", selected_questions, num_questions)
     # pass 
