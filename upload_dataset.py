@@ -19,7 +19,22 @@ def create_readme(dataset):
         topics.add(item['topic'])
         subtopics.add(f"{item['topic']} > {item['subtopic']}")
     
-    readme_content = f"""# Medical Cybersecurity Q&A Dataset
+    readme_content = f"""---
+language:
+- en
+license:
+- mit
+multilinguality:
+- monolingual
+size_categories:
+- 1K<n<10K
+source_datasets:
+- original
+task_categories:
+- question-answering
+---
+
+# Medical Cybersecurity Q&A Dataset
 
 This dataset contains question-answer pairs focused on medical device cybersecurity and healthcare security.
 
@@ -47,7 +62,8 @@ This dataset can be used for training models to understand and generate response
 
 def main():
     # Load the JSONL file
-    data = load_jsonl('training_data_2.jsonl')
+    data = load_jsonl('val.jsonl')
+    
     
     # Convert to Hugging Face dataset
     dataset = Dataset.from_list(data)
@@ -61,7 +77,7 @@ def main():
     api = HfApi(token=token)
     
     # Create a new dataset repository
-    repo_name = "magichampz/medical-cyber-qa-dataset"
+    repo_name = "magichampz/medical-cyber-val"
     
     # Create README content
     readme_content = create_readme(data)
